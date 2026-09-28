@@ -11,33 +11,46 @@ const app = express();
 
 const PORT = process.env.PORT || 5000;
 
-const allowedOrigins = (
-  process.env.CLIENT_URL ||
-  "http://localhost:5173"
-)
-  .split(",")
-  .map((origin) => origin.trim())
-  .filter(Boolean);
+const allowedOrigins = [
+  ...(process.env.CLIENT_URL || "")
+    .split(",")
+    .map((origin) => origin.trim())
+    .filter(Boolean),
+
+  "https://linkly-tan.vercel.app",
+  "http://localhost:5173",
+];
 
 app.use(
   cors({
     origin(origin, callback) {
-      /*
-       * Allow requests without an Origin header
-       * such as health checks/server-to-server calls.
-       */
-      if (!origin) {
+      // Allow non-browser requests and approved browser origins.
+      if (!origin || allowedOrigins.includes(origin)) {
         return callback(null, true);
       }
 
-      if (allowedOrigins.includes(origin)) {
-        return callback(null, true);
-      }
-
-      return callback(
-        new Error("CORS origin not allowed")
-      );
+      // Do not turn a CORS rejection into an HTTP 500.
+      return callback(null, false);
     },
+
+    methods: [
+      "GET",
+      "HEAD",
+      "PUT",
+      "PATCH",
+      "POST",
+      "DELETE",
+      "OPTIONS",
+    ],
+
+    allowedHeaders: [
+      "Content-Type",
+      "Authorization",
+    ],
+
+    credentials: true,
+
+    optionsSuccessStatus: 204,
   })
 );
 
