@@ -1,0 +1,114 @@
+:root {
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  color: #f5fffc;
+  background: #050807;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  color-scheme: dark;
+
+  --linkly-bg: #050807;
+  --linkly-surface: rgba(12, 20, 19, 0.72);
+  --linkly-surface-strong: rgba(15, 27, 25, 0.88);
+
+  --linkly-text: #f5fffc;
+  --linkly-text-soft: rgba(245, 255, 252, 0.62);
+  --linkly-text-muted: rgba(245, 255, 252, 0.4);
+
+  --linkly-mint: #8fffe4;
+  --linkly-mint-soft: rgba(143, 255, 228, 0.12);
+
+  --linkly-cyan: #65e7ff;
+  --linkly-amber: #ffbd72;
+
+  --linkly-border: rgba(143, 255, 228, 0.12);
+  --linkly-border-soft: rgba(255, 255, 255, 0.08);
+
+  --linkly-radius-lg: 28px;
+  --linkly-radius-md: 18px;
+  --linkly-radius-sm: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  min-height: 100%;
+  background: var(--linkly-bg);
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--linkly-bg);
+  color: var(--linkly-text);
+}
+
+body,
+button,
+input {
+  font-family: inherit;
+}
+
+button,
+a,
+input {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--linkly-mint);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: rgba(143, 255, 228, 0.22);
+  color: #ffffff;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050807;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 2px solid #050807;
+  border-radius: 999px;
+  background: rgba(143, 255, 228, 0.24);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(143, 255, 228, 0.42);
+}

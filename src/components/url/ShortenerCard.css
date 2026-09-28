@@ -1,0 +1,462 @@
+.shortener-card {
+  width: min(760px, 100%);
+  box-sizing: border-box;
+
+  padding: 34px;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.1);
+
+  border-radius: 28px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.075),
+      rgba(255, 255, 255, 0.025)
+    );
+
+  box-shadow:
+    0 30px 100px
+      rgba(0, 0, 0, 0.45),
+    inset 0 1px
+      rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.shortener-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 24px;
+
+  margin-bottom: 29px;
+}
+
+.shortener-card__eyebrow {
+  display: inline-block;
+
+  margin-bottom: 10px;
+
+  color: rgba(
+    255,
+    255,
+    255,
+    0.45
+  );
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+}
+
+.shortener-card h2 {
+  margin: 0;
+
+  font-size: clamp(
+    24px,
+    4vw,
+    36px
+  );
+
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+}
+
+.shortener-card__header p {
+  max-width: 520px;
+
+  margin: 11px 0 0;
+
+  color: rgba(
+    255,
+    255,
+    255,
+    0.55
+  );
+
+  line-height: 1.6;
+}
+
+.url-input-wrapper {
+  margin-bottom: 21px;
+}
+
+.url-input-wrapper label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: rgba(
+    255,
+    255,
+    255,
+    0.6
+  );
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.url-input-wrapper input {
+  width: 100%;
+  box-sizing: border-box;
+
+  min-height: 55px;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.1);
+
+  outline: none;
+
+  border-radius: 16px;
+
+  padding: 0 18px;
+
+  background: rgba(
+    0,
+    0,
+    0,
+    0.3
+  );
+
+  color: white;
+
+  font: inherit;
+
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+.url-input-wrapper input::placeholder {
+  color: rgba(
+    255,
+    255,
+    255,
+    0.28
+  );
+}
+
+.url-input-wrapper input:focus {
+  border-color:
+    rgba(143, 255, 228, 0.3);
+
+  background: rgba(
+    0,
+    0,
+    0,
+    0.42
+  );
+
+  box-shadow:
+    0 0 0 4px
+      rgba(143, 255, 228, 0.035);
+}
+
+/* OPTIONS */
+
+.shortener-options {
+  display: flex;
+  flex-direction: column;
+
+  gap: 0;
+
+  margin-bottom: 27px;
+
+  /*
+    Do NOT use overflow:hidden here.
+    It can clip the native expiry dropdown.
+  */
+  overflow: visible;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.07);
+
+  border-radius: 18px;
+
+  background: rgba(
+    0,
+    0,
+    0,
+    0.18
+  );
+}
+
+.option-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  min-height: 69px;
+
+  padding: 14px 18px;
+
+  border-bottom: 1px solid
+    rgba(255, 255, 255, 0.06);
+}
+
+.option-row:last-child {
+  border-bottom: 0;
+}
+
+.option-row strong {
+  display: block;
+
+  margin-bottom: 4px;
+
+  font-size: 14px;
+}
+
+.option-row span {
+  display: block;
+
+  color: rgba(
+    255,
+    255,
+    255,
+    0.42
+  );
+
+  font-size: 12px;
+}
+
+/* EXPANDING INPUT SECTIONS */
+
+.option-input {
+  display: grid;
+
+  gap: 8px;
+
+  margin: 0;
+
+  padding: 14px 16px 16px;
+
+  border-bottom: 1px solid
+    rgba(255, 255, 255, 0.06);
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(143, 255, 228, 0.045),
+      rgba(143, 255, 228, 0.015)
+    );
+}
+
+.option-input:last-child {
+  border-bottom: 0;
+}
+
+.option-input label {
+  color: rgba(
+    255,
+    255,
+    255,
+    0.58
+  );
+
+  font-size: 0.76rem;
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+.option-input input,
+.option-input select {
+  width: 100%;
+  min-height: 44px;
+
+  box-sizing: border-box;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.1);
+
+  border-radius: 11px;
+
+  outline: none;
+
+  background: rgba(
+    0,
+    0,
+    0,
+    0.26
+  );
+
+  color: #f5fffc;
+
+  font: inherit;
+
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+.option-input input {
+  padding: 0 13px;
+}
+
+.option-input input::placeholder {
+  color: rgba(
+    255,
+    255,
+    255,
+    0.28
+  );
+}
+
+.option-input input:focus,
+.option-input select:focus {
+  border-color:
+    rgba(143, 255, 228, 0.42);
+
+  background: rgba(
+    143,
+    255,
+    228,
+    0.04
+  );
+
+  box-shadow:
+    0 0 0 3px
+      rgba(143, 255, 228, 0.07);
+}
+
+/*
+  Expiry dropdown:
+  - visible field
+  - visible down arrow
+  - enough height
+  - native options remain usable
+*/
+.option-input select {
+  appearance: none;
+  -webkit-appearance: none;
+
+  padding: 0 43px 0 13px;
+
+  cursor: pointer;
+
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.28
+  );
+
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238fffe4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+
+  background-repeat: no-repeat;
+
+  background-position:
+    right 14px center;
+
+  background-size: 16px;
+}
+
+.option-input select:hover {
+  border-color:
+    rgba(143, 255, 228, 0.28);
+}
+
+.option-input select option {
+  background: #0b1110;
+  color: #f5fffc;
+}
+
+.option-input > span {
+  color: rgba(
+    255,
+    255,
+    255,
+    0.38
+  );
+
+  font-size: 0.74rem;
+  line-height: 1.45;
+}
+
+.shortener-error {
+  margin-top: 13px;
+
+  padding: 11px 14px;
+
+  border: 1px solid
+    rgba(255, 120, 120, 0.22);
+
+  border-radius: 12px;
+
+  background: rgba(
+    255,
+    80,
+    80,
+    0.06
+  );
+
+  color: #ffb4b4;
+
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+
+.shortener-action {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* MOBILE */
+
+@media (max-width: 640px) {
+  .shortener-card {
+    padding: 22px;
+    border-radius: 22px;
+  }
+
+  .shortener-card__header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .option-row {
+    align-items: flex-start;
+    min-height: auto;
+    padding: 15px;
+  }
+
+  .option-input {
+    padding: 13px 15px 15px;
+  }
+
+  .shortener-action {
+    justify-content: stretch;
+  }
+
+  .shortener-action > * {
+    width: 100%;
+  }
+}
+
+@media (max-width: 430px) {
+  .shortener-card {
+    padding: 18px;
+  }
+
+  .shortener-card h2 {
+    font-size: 25px;
+  }
+
+  .url-input-wrapper input {
+    min-height: 51px;
+    padding: 0 14px;
+  }
+}
