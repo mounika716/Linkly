@@ -70,7 +70,7 @@ async function startServer() {
 
     console.log("MongoDB connected.");
 
-    aapp.listen(PORT, "0.0.0.0", () => {
+    app.listen(PORT, "0.0.0.0", () => {
       console.log(
         `Linkly backend running on port ${PORT}`
       );
